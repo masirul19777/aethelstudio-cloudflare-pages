@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b12">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="AethelStudio AI — buat website instan dari prompt, edit, unduh ZIP ke folder Download, dan hosting langsung.">
+<title>AethelStudio AI — AI Web Builder</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M20 46 L32 18 L44 46 M25 38 H39' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<div id="boot" class="boot">
+  <div class="boot-logo">A</div>
+  <div class="boot-text">Menyiapkan studio…</div>
+</div>
+
+<div id="app" class="app" hidden>
+  <div id="announce" class="announce" hidden></div>
+
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <button class="brand" id="brandBtn" title="AethelStudio">
+      <span class="brand-mark">A</span>
+      <span class="brand-text">
+        <strong id="brandName">AETHEL<span>STUDIO</span></strong>
+        <small id="brandTag">AI Web Builder</small>
+      </span>
+    </button>
+
+    <div class="topbar-right">
+      <span class="live-dot" id="liveDot"><i></i> Live</span>
+      <button class="avatar-btn" id="accountBtn" title="Akun">
+        <span id="avatarInitial">?</span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-brand"><span class="brand-mark sm">A</span> AETHELSTUDIO</div>
+      <button class="icon-btn" id="closeDrawer" aria-label="Tutup menu">✕</button>
+    </div>
+    <nav id="navList" class="nav-list"></nav>
+    <div class="drawer-foot">
+      <div class="usage-box" id="usageBox"></div>
+      <div class="drawer-ver">
+        <span id="versionText">v1.0.0</span>
+        <span class="dot-sep">•</span>
+        <span>Gratis selamanya</span>
+      </div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main class="main" id="view" tabindex="-1"></main>
+
+  <footer class="footer">
+    <div>© <span id="yearNow">2026</span> <span id="footBrand">AethelStudio</span> — dibuat dengan ❤️</div>
+    <div class="footer-links">
+      <a href="#/help">Bantuan</a>
+      <span class="dot-sep">•</span>
+      <a href="#/settings">Pengaturan</a>
+    </div>
+  </footer>
+</div>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="modalRoot"></div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/zip.js"></script>
+<script src="assets/js/gen.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/deploy.js"></script>
+<script src="assets/js/admin.js"></script>
+<script src="assets/js/pages.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
